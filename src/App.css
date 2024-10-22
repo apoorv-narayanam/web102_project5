@@ -1,0 +1,39 @@
+/* src/App.css */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 80%;
+}
+
+.summary {
+  margin: 20px 0;
+}
+
+.weather-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
