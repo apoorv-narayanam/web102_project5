@@ -1,39 +1,107 @@
-/* src/App.css */
-.App {
-  text-align: center;
+/* url('./public/images/astro.jpg'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* body {
+    margin: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+.app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background-image:url('./public/images/astro.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  color: white;
-  padding: 20px;
+.left-pane {
+    width: 15%;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 20px;
 }
 
-.dashboard {
-  padding: 20px;
+.right-pane {
+    width: 85%;
+    margin: 15px;
+
+    padding: 20px;
 }
 
-.search-bar {
-  margin-bottom: 20px;
-  padding: 8px;
-  width: 80%;
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px; /* Increased font size for prominence */
+    color: white; /* Ensures visibility */
 }
 
-.summary {
-  margin: 20px 0;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.weather-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+nav li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0; /* Increased spacing */
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    text-decoration: none;
+    font-size: 24px; /* Adjusted font size */
+    color: white; /* Ensures visibility */
+    margin-left: 10px; /* Space between icon and text */
+}
+
+nav a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+.card-container {
+    display: flex;
+    padding:10px;
 }
 
 .card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 200px;
+    padding: 55px; /* Adjusted padding */
+    margin: 10px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background for cards */
+    color: white; /* Text color for readability */
+    text-align: center; /* Centered text */
+}
+
+.list-component {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
 }

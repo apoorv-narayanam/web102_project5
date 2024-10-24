@@ -1,16 +1,33 @@
 // src/App.jsx
 import React from 'react';
-import FilterableWeatherList from './components/FilterableWeatherList';
+import Header from './components/Header';
+import NavBar from './components/Navbar';
+import Card from './components/Card';
+import List from './components/List';
 import './App.css';
-
+import { useState, useEffect } from 'react';
 function App() {
+  const [lowestTemp, setLowestTemp] = useState(null);
+  const [avgMoonRise, setAvgMoonRise] = useState(null);
+  const [fullMoonPhase, setFullMoonPhase] = useState('🌕');
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Weather Dashboard</h1>
-      </header>
-      <FilterableWeatherList />
+    <div className='app'>
+    <div className='left-pane'>    
+    <Header />
+    <NavBar />
     </div>
+    <div className='right-pane'>
+    <Card
+                    lowestTemp={lowestTemp}
+                    avgMoonRise={avgMoonRise}
+                    fullMoonPhase={fullMoonPhase}
+                />
+                    <List
+                    setLowestTemp={setLowestTemp}
+                    setAvgMoonRise={setAvgMoonRise}
+                />
+    </div>
+</div>
   );
 }
 
