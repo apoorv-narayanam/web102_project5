@@ -3,7 +3,8 @@ import React from 'react';
 
 import { useState, useEffect } from 'react';
 
-
+import LineChartComponent from './LineChartComponent';
+import BarChartComponent from './BarChartComponent';
 
 const List = ({ setLowestTemp, setAvgMoonRise }) => {
   const [data, setData] = useState([]);
@@ -41,8 +42,9 @@ const List = ({ setLowestTemp, setAvgMoonRise }) => {
     setFilteredData(filtered);
 };
   return (
-<div className='list-component'>
-            <input 
+<div className='list-component'  style={{ display: 'flex' }}>
+<div style={{ width: '50%' }}>
+<input 
                 type='text' 
                 placeholder='Enter date' 
                 value={searchTerm} 
@@ -79,6 +81,15 @@ const List = ({ setLowestTemp, setAvgMoonRise }) => {
                     ))}
                 </tbody>
             </table>
+</div>
+            <div className="chart-container-wrapper">
+                <div className="chart-container">
+                    <LineChartComponent data={data} />
+                </div>
+                <div className="chart-container">
+                    <BarChartComponent data={data} />
+                </div>
+            </div>
         </div>
   );
 }

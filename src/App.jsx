@@ -6,6 +6,7 @@ import Card from './components/Card';
 import List from './components/List';
 import './App.css';
 import { useState, useEffect } from 'react';
+
 function App() {
   const [lowestTemp, setLowestTemp] = useState(null);
   const [avgMoonRise, setAvgMoonRise] = useState(null);
@@ -26,6 +27,7 @@ function App() {
                     setLowestTemp={setLowestTemp}
                     setAvgMoonRise={setAvgMoonRise}
                 />
+
     </div>
 </div>
   );
