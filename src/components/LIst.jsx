@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 import LineChartComponent from './LineChartComponent';
 import BarChartComponent from './BarChartComponent';
+import { Link } from 'react-router-dom';
 
 const List = ({ setLowestTemp, setAvgMoonRise }) => {
   const [data, setData] = useState([]);
@@ -65,8 +66,8 @@ const List = ({ setLowestTemp, setAvgMoonRise }) => {
                         <th>Date</th>
                         <th>Temperature</th>
                         <th>Moon Rise</th>
-                        <th>Moon Set</th>
                         <th>Phase</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,8 +76,14 @@ const List = ({ setLowestTemp, setAvgMoonRise }) => {
                             <td>{row.datetime}</td>
                             <td>{row.temp}°F</td>
                             <td>{new Date(row.moonrise_ts * 1000).toLocaleTimeString('en-US', { timeZone: 'America/New_York' })}</td>
-                            <td>{new Date(row.moonset_ts * 1000).toLocaleTimeString('en-US', { timeZone: 'America/New_York' })}</td>
+                            {/* <td>{new Date(row.moonset_ts * 1000).toLocaleTimeString('en-US', { timeZone: 'America/New_York' })}</td> */}
                             <td>{categorizeMoonPhase(row.moon_phase)}</td>
+                            <td>
+                                <Link to={`/${row.datetime}`}>
+                                    
+                                    <img src="./public/images/details.jpg" alt="Details" style={{ width: '20px', height: '20px' }} />
+                                </Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

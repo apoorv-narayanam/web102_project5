@@ -6,8 +6,20 @@ import Card from './components/Card';
 import List from './components/List';
 import './App.css';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DetailView from './DetailView';
 
 function App() {
+  return (
+      <Router>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/:date" element={<DetailView />} /> {/* Dynamic route */}
+          </Routes>
+      </Router>
+  );
+}
+function Home() {
   const [lowestTemp, setLowestTemp] = useState(null);
   const [avgMoonRise, setAvgMoonRise] = useState(null);
   const [fullMoonPhase, setFullMoonPhase] = useState('🌕');
